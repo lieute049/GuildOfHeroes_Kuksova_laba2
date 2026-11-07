@@ -12,4 +12,9 @@ public class Hero
         Level = 1;
         Experience = 0;
     }
+
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+    }
 }
