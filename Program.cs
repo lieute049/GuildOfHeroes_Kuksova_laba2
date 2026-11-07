@@ -7,7 +7,7 @@ yaroslav.TakeDamage(25);
 anastasia.TakeDamage(30);
 Console.WriteLine($"После вызовов: {yaroslav.Health}, {anastasia.Health}, {artem.Health}")
 ;
-yaroslav.TakeDamage(-20);
+yaroslav.TakeDamage(220);
 Console.WriteLine($"После неверного урона: {yaroslav.Health}");
 artem.TakeDamage(200);
 Console.WriteLine($"После сильного урона, Артём: {artem.Health}");
@@ -18,4 +18,27 @@ yaroslav.GainExperience(25);
 Console.WriteLine($"После лечения, Ярослав: {yaroslav.Health}");
 Console.WriteLine($"Опыт Ярослава: {yaroslav.Experience}");
 
+bool yaroslavAlive = yaroslav.IsAlive();
+Console.WriteLine($"Ярослав жив: {yaroslavAlive}");
+Console.WriteLine($"Артём жив: {artem.IsAlive()}");
 
+if (yaroslavAlive) {
+    Console.WriteLine("Ярослав может продолжать приключение.");
+} else {
+    Console.WriteLine("Ярослав больше не может сражаться.");
+}
+string info = yaroslav.GetInfo();
+Console.WriteLine("Строка получена. Сейчас выведем её:");
+Console.WriteLine(info);
+Console.WriteLine();
+Console.WriteLine(anastasia.GetInfo());
+Console.WriteLine();
+Console.WriteLine(artem.GetInfo());
+
+Console.WriteLine();
+Product items = new Product("Чебурек", 100);
+Console.WriteLine($"До пополнения: {items.Quantity}");
+items.Restock(1300);
+Console.WriteLine($"После пополнения на 1300: {items.Quantity}");
+items.Restock(88);
+Console.WriteLine($"После пополнения на 88: {items.Quantity}");
